@@ -3,9 +3,11 @@ package mycraft.springframwork.sfgpetclinic.services.map;
 import mycraft.springframwork.sfgpetclinic.model.Vet;
 import mycraft.springframwork.sfgpetclinic.services.CrudService;
 import mycraft.springframwork.sfgpetclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements
         VetService {
 

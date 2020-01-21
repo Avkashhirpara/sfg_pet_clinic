@@ -2,9 +2,10 @@ package mycraft.springframwork.sfgpetclinic.services.map;
 
 import mycraft.springframwork.sfgpetclinic.model.Owner;
 import mycraft.springframwork.sfgpetclinic.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements
         OwnerService {
 
