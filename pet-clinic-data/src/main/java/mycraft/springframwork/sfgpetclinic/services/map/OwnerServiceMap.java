@@ -1,12 +1,12 @@
 package mycraft.springframwork.sfgpetclinic.services.map;
 
 import mycraft.springframwork.sfgpetclinic.model.Owner;
-import mycraft.springframwork.sfgpetclinic.services.CrudService;
+import mycraft.springframwork.sfgpetclinic.services.OwnerService;
 
 import java.util.Set;
 
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements
-        CrudService<Owner,Long> {
+        OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -27,5 +27,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements
     @Override
     public void deletebyId(Long aLong) {
         super.deleteById(aLong);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

@@ -2,11 +2,12 @@ package mycraft.springframwork.sfgpetclinic.services.map;
 
 import mycraft.springframwork.sfgpetclinic.model.Pet;
 import mycraft.springframwork.sfgpetclinic.services.CrudService;
+import mycraft.springframwork.sfgpetclinic.services.PetService;
 
 import java.util.Set;
 
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements
-        CrudService<Pet, Long> {
+        PetService {
 
     @Override
     public Set<Pet> findAll() {
