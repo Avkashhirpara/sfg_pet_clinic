@@ -1,10 +1,11 @@
 package mycraft.springframwork.sfgpetclinic.bootstrap;
 
 import mycraft.springframwork.sfgpetclinic.model.Owner;
+import mycraft.springframwork.sfgpetclinic.model.PetType;
 import mycraft.springframwork.sfgpetclinic.model.Vet;
 import mycraft.springframwork.sfgpetclinic.services.OwnerService;
+import mycraft.springframwork.sfgpetclinic.services.PetTypeService;
 import mycraft.springframwork.sfgpetclinic.services.VetService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -13,10 +14,12 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService   petTypeService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
@@ -24,6 +27,14 @@ public class DataLoader implements CommandLineRunner {
         loadData();
     }
     private void loadData() {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        cat.setName("Cat");
+        PetType savedCatType = petTypeService.save(cat);
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
